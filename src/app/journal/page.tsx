@@ -1,11 +1,17 @@
 "use client";
+import React from "react";
 export default function Journal() {
   const handleJournalDisplay = (event) => {
     event.preventDefault();
+
     const text = (document.getElementById("journalEntry") as HTMLInputElement)
       .value;
+
     let entry = document.getElementById("entry");
-    entry.textContent = text;
+
+    if (entry) {
+      entry.textContent = text;
+    }
 
     console.log(text);
   };

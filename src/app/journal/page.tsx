@@ -17,21 +17,23 @@ export default function Journal() {
   };
   return (
     <>
-      <h1>zenlab</h1>
-      <h2>Daily Journal</h2>
-      <form onSubmit={handleJournalDisplay}>
-        <textarea
-          id="journalEntry"
-          name="Journal"
-          rows={4}
-          cols={50}
-          placeholder="How do you feel?"
-        />
-        <br />
-        <br />
-        <input type="submit" value="Meditate" />
-      </form>
-      <div id="entry"></div>
+      <div className="content-center">
+        <h1 className="text-3xl font-bold underline">zenlab</h1>
+        <h2>Daily Journal</h2>
+        <form onSubmit={handleJournalDisplay}>
+          <textarea
+            id="journalEntry"
+            name="Journal"
+            rows={4}
+            cols={50}
+            placeholder="How do you feel?"
+          />
+          <br />
+          <br />
+          <input type="submit" value="Meditate" />
+        </form>
+        <div id="entry"></div>
+      </div>
     </>
   );
 }

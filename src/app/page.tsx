@@ -7,6 +7,7 @@ export default function Page() {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
+          minHeight: "100vh",
         }}
       >
         <h1>Hello, Zenlog</h1>

@@ -1,4 +1,9 @@
-export default function Page() {
+"use client";
+
+import { useRouter } from "next/navigation";
+
+export default function Page({}) {
+  const router = useRouter();
   return (
     <>
       <div
@@ -18,7 +23,13 @@ export default function Page() {
             justifyContent: "flex-end",
           }}
         >
-          <button style={{ marginRight: "50px" }}>Login</button>
+          <button
+            style={{ marginRight: "50px" }}
+            onClick={() => router.push("/journal")}
+          >
+            {" "}
+            Login
+          </button>
           <button>Sign Up</button>
         </div>
       </div>

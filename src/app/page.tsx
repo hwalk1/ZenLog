@@ -6,7 +6,7 @@ export default function Page({}) {
   const router = useRouter();
   return (
     <>
-      <div className="flex items-center justify-center flex-col min-h-screen bg-main-bg">
+      <div className="flex items-center justify-center flex-col min-h-screen min-w-height bg-main-bg">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Hello, Zenlog
         </h1>

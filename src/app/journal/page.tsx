@@ -30,7 +30,11 @@ export default function Journal() {
           />
           <br />
           <br />
-          <input type="submit" value="Meditate" />
+          <input
+            type="submit"
+            value="Meditate"
+            className="bg-primary hover:bg-blue-500 text-secondary font-semibold hover:text-white py-2 px-4 border-blue-500 hover:border-transparent rounded min-w-full"
+          />
         </form>
         <div id="entry"></div>
       </div>

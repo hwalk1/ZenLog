@@ -17,9 +17,8 @@ export default function Journal() {
   };
   return (
     <>
-      <div className="flex-col">
-        <h1 className="text-3xl font-bold underline">zenlog</h1>
-        <h2>Daily Journal</h2>
+      <div className="flex-col justify-center align-middle">
+        <h1 className="text-primary justify-center flex text-4xl">zenlog</h1>
         <form onSubmit={handleJournalDisplay}>
           <textarea
             id="journalEntry"

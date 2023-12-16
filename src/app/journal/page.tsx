@@ -23,9 +23,8 @@ export default function Journal() {
           <textarea
             id="journalEntry"
             name="Journal"
-            rows={4}
-            cols={50}
             placeholder="How do you feel?"
+            className="min-w-100"
           />
           <br />
           <br />

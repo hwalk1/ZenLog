@@ -26,8 +26,6 @@ export default function Journal() {
             placeholder="How do you feel?"
             className="min-w-100"
           />
-          <br />
-          <br />
           <input
             type="submit"
             value="Meditate"

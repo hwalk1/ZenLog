@@ -1,10 +1,9 @@
 import { ChatOpenAI } from "langchain/chat_models/openai";
+const chatModel = new ChatOpenAI({
+  openAIApiKey: process.env.OPENAI_API_KEY,
+});
 
 async function runChat() {
-  const chatModel = new ChatOpenAI({
-    openAIApiKey: process.env.OPENAI_API_KEY,
-  });
-
   try {
     const data = await chatModel.invoke("what is LangSmith?");
 

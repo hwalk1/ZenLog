@@ -13,8 +13,7 @@ export default function Journal() {
     if (entry) {
       entry.textContent = text;
     }
-
-    console.log(text);
+    runChat(text);
   };
   return (
     <>

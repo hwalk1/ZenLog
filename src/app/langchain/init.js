@@ -3,7 +3,7 @@ const chatModel = new ChatOpenAI({
   openAIApiKey: process.env.OPENAI_API_KEY,
 });
 
-async function runChat() {
+export async function runChat() {
   try {
     const data = await chatModel.invoke("what is LangSmith?");
 

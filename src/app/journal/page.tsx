@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { runChat } from "../langchain/init";
 export default function Journal() {
   const handleJournalDisplay = (event) => {
     event.preventDefault();

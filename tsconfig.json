@@ -26,7 +26,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/app/langchain/init.js"
+    "src/app/langchain/init.tsx"
   ],
   "exclude": ["node_modules"]
 }

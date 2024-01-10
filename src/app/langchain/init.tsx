@@ -8,7 +8,7 @@ export async function runChat(text) {
     const data = await chatModel.invoke(text);
 
     if (data) {
-      return data.content;
+      return data;
     } else {
       console.log("No data received from the chat model.");
     }

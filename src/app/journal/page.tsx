@@ -17,8 +17,11 @@ export default function Journal() {
       const data = await runChat(text);
       if (data) {
         // Set the content of the "entry" element to the value returned from runChat
+        const textContent = data.content;
+
+        // Set the content of the "entry" element to the value of the 'text' property
         if (entry) {
-          entry.textContent = data;
+          entry.textContent = textContent;
         }
       }
     } catch (error) {

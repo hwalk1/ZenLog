@@ -2,7 +2,7 @@
 import React from "react";
 import { runChat } from "../langchain/init";
 export default function Journal() {
-  const handleJournalDisplay = (event) => {
+  const handleJournalDisplay = async (event) => {
     event.preventDefault();
 
     const text = (document.getElementById("journalEntry") as HTMLInputElement)
@@ -10,10 +10,23 @@ export default function Journal() {
 
     let entry = document.getElementById("entry");
 
-    if (entry) {
-      entry.textContent = text;
+    // if (entry) {
+    //   entry.textContent = text;
+    // }
+    try {
+      const data = await runChat(text);
+      if (data) {
+        // Set the content of the "entry" element to the value returned from runChat
+        const textContent = data.content;
+
+        // Set the content of the "entry" element to the value of the 'text' property
+        if (entry) {
+          entry.textContent = textContent;
+        }
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
     }
-    runChat(text);
   };
   return (
     <>

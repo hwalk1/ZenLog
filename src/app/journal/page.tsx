@@ -10,10 +10,17 @@ export default function Journal() {
 
     let entry = document.getElementById("entry");
 
-    if (entry) {
-      entry.textContent = text;
+    // if (entry) {
+    //   entry.textContent = text;
+    // }
+    try {
+      const data = runChat(text);
+      if (data) {
+        console.log(data);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
     }
-    runChat(text);
   };
   return (
     <>

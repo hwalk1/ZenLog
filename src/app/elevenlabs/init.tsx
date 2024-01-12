@@ -28,7 +28,6 @@ export async function textConversion(text: string) {
             }
         }
     ]
-}
 */
     body: {
       model_id: "eleven_monolingual_v1",
@@ -38,7 +37,7 @@ export async function textConversion(text: string) {
         stability: 123,
         style: 123,
         use_speaker_boost: true,
-      }'
+      },
     },
   };
 

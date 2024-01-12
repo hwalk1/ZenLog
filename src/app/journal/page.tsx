@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { runChat } from "../langchain/init";
+import { textConversion } from "../elevenlabs/init";
 export default function Journal() {
   const handleJournalDisplay = async (event) => {
     event.preventDefault();
@@ -22,6 +23,7 @@ export default function Journal() {
         // Set the content of the "entry" element to the value of the 'text' property
         if (entry) {
           entry.textContent = textContent;
+          await textConversion(textContent);
         }
       }
     } catch (error) {

@@ -4,7 +4,7 @@ async function textConversion(text: string) {
     headers: {
       "Content-Type": "application/json",
       Accept: "audio/mpeg",
-      "xi-api-key": "<xi-api-key>",
+      "xi-api-key": process.env.NEXT_PUBLIC_NEXT_PUBLIC_ELEVEN_LABS_API_KEY,
     },
     body: {
       model_id: "eleven_monolingual_v1",

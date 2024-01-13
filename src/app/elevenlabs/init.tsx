@@ -1,48 +1,34 @@
-export async function textConversion(text: string) {
-  console.log(process.env.NEXT_PUBLIC_ELEVEN_LABS_API_KEY);
-  console.log({ text });
+import axios from "axios";
+
+// Define a function called textToSpeech that takes in a string called inputText as its argument.
+const textToSpeech = async (inputText) => {
+  // Set the API key for ElevenLabs API.
+  // Do not use directly. Use environment variables.
+  const API_KEY = process.env.NEXT_PUBLIC_ELEVEN_LABS_API_KEY;
+  // Set the ID of the voice to be used.
+  const VOICE_ID = "21m00Tcm4TlvDq8ikWAM";
+
+  // Set options for the API request.
   const options = {
     method: "POST",
+    url: `https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}`,
     headers: {
-      "Content-Type": "application/json",
-      Accept: "audio/mpeg",
-      // This api key isnt being sent through to the Post request
-      "xi-api-key": process.env.NEXT_PUBLIC_ELEVEN_LABS_API_KEY,
+      accept: "audio/mpeg", // Set the expected response type to audio/mpeg.
+      "content-type": "application/json", // Set the content type to application/json.
+      "xi-api-key": `${API_KEY}`, // Set the API key in the headers.
     },
-    // This body is passing through as an object, but it looks like we need a string
-    /* {
-    "detail": [
-        {
-            "loc": [
-                "body",
-                1
-            ],
-            "msg": "Expecting value: line 1 column 2 (char 1)",
-            "type": "value_error.jsondecode",
-            "ctx": {
-                "msg": "Expecting value",
-                "doc": "[object Object]",
-                "pos": 1,
-                "lineno": 1,
-                "colno": 2
-            }
-        }
-    ]
-*/
-    body: JSON.stringify({
-      model_id: "eleven_monolingual_v1",
-      text: { text },
-      voice_settings: {
-        similarity_boost: 123,
-        stability: 123,
-        style: 123,
-        use_speaker_boost: true,
-      },
-    }),
+    data: {
+      text: inputText, // Pass in the inputText as the text to be converted to speech.
+    },
+    responseType: "arraybuffer", // Set the responseType to arraybuffer to receive binary data as response.
   };
 
-  fetch("https://api.elevenlabs.io/v1/text-to-speech/{voice_id}", options)
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
-}
+  // Send the API request using Axios and wait for the response.
+  const speechDetails = await axios.request(options);
+
+  // Return the binary audio data received from the API response.
+  return speechDetails.data;
+};
+
+// Export the textToSpeech function as the default export of this module.
+export default textToSpeech;

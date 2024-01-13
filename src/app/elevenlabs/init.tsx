@@ -7,7 +7,7 @@ export async function textConversion(text: string) {
       "Content-Type": "application/json",
       Accept: "audio/mpeg",
       // This api key isnt being sent through to the Post request
-      "xi-api-key": process.env.NEXT_PUBLIC_NEXT_PUBLIC_ELEVEN_LABS_API_KEY,
+      "xi-api-key": process.env.NEXT_PUBLIC_ELEVEN_LABS_API_KEY,
     },
     // This body is passing through as an object, but it looks like we need a string
     /* {
@@ -29,7 +29,7 @@ export async function textConversion(text: string) {
         }
     ]
 */
-    body: {
+    body: JSON.stringify({
       model_id: "eleven_monolingual_v1",
       text: { text },
       voice_settings: {
@@ -38,7 +38,7 @@ export async function textConversion(text: string) {
         style: 123,
         use_speaker_boost: true,
       },
-    },
+    }),
   };
 
   fetch("https://api.elevenlabs.io/v1/text-to-speech/{voice_id}", options)

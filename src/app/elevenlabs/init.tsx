@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Define a function called textToSpeech that takes in a string called inputText as its argument.
-const textToSpeech = async (inputText) => {
+const textToSpeech = async (text) => {
   // Set the API key for ElevenLabs API.
   // Do not use directly. Use environment variables.
   const API_KEY = process.env.NEXT_PUBLIC_ELEVEN_LABS_API_KEY;
@@ -18,7 +18,7 @@ const textToSpeech = async (inputText) => {
       "xi-api-key": `${API_KEY}`, // Set the API key in the headers.
     },
     data: {
-      text: inputText, // Pass in the inputText as the text to be converted to speech.
+      text, // Pass in the inputText as the text to be converted to speech.
     },
     responseType: "arraybuffer", // Set the responseType to arraybuffer to receive binary data as response.
   };

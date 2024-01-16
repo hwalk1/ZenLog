@@ -14,9 +14,6 @@ export default function Journal() {
 
     let entry = document.getElementById("entry");
 
-    // if (entry) {
-    //   entry.textContent = text;
-    // }
     try {
       const data = await runChat(text);
       if (data) {

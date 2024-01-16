@@ -26,7 +26,6 @@ export default function Journal() {
         // Set the content of the "entry" element to the value of the 'text' property
         if (entry) {
           setShowAudio(true);
-          console.log(textContent);
           setChatText(textContent);
           entry.textContent = textContent;
           // TO DO: Will need to import <AudioPlayer>

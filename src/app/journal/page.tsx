@@ -25,7 +25,6 @@ export default function Journal() {
           setShowAudio(true);
           setChatText(textContent);
           entry.textContent = textContent;
-          // TO DO: Will need to import <AudioPlayer>
         }
       }
     } catch (error) {

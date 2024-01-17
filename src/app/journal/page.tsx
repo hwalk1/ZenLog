@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
 import { runChat } from "../langchain/init";
-import { useState, useEffect } from "react";
+import { useState, SetStateAction, Dispatch } from "react";
 import AudioPlayer from "../langchain/audioplayer";
 export default function Journal() {
   const [audio, setShowAudio] = useState(false);
-  const [chatText, setChatText] = useState("");
+  const [chatText, setChatText]: [string, Dispatch<SetStateAction<string>>] =
+    useState("");
   const handleJournalDisplay = async (event) => {
     event.preventDefault();
 
@@ -25,7 +26,6 @@ export default function Journal() {
           setShowAudio(true);
           setChatText(textContent);
           entry.textContent = textContent;
-          // TO DO: Will need to import <AudioPlayer>
         }
       }
     } catch (error) {

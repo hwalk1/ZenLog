@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { runChat } from "../langchain/init";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import AudioPlayer from "../langchain/audioplayer";
 export default function Journal() {
   const [audio, setShowAudio] = useState(false);

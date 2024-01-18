@@ -21,7 +21,6 @@ export async function runChat(text) {
     });
 
     if (data) {
-      console.log(data);
       return data;
     } else {
       console.log("No data received from the chat model.");

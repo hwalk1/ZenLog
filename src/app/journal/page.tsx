@@ -4,9 +4,8 @@ import { runChat } from "../langchain/init";
 import { useState, SetStateAction, Dispatch } from "react";
 import AudioPlayer from "../langchain/audioplayer";
 export default function Journal() {
-  const [audio, setShowAudio] = useState(false);
-  const [chatText, setChatText]: [string, Dispatch<SetStateAction<string>>] =
-    useState("");
+  const [showAudio, setShowAudio] = useState(false);
+  const [chatText, setChatText] = useState("");
   const handleJournalDisplay = async (event) => {
     event.preventDefault();
 
@@ -24,8 +23,9 @@ export default function Journal() {
         // Set the content of the "entry" element to the value of the 'text' property
         if (entry) {
           setShowAudio(true);
-          setChatText(textContent);
-          entry.textContent = textContent;
+          console.log(textContent);
+          setChatText(data.content as string);
+          entry.textContent = textContent as string;
         }
       }
     } catch (error) {
@@ -57,7 +57,7 @@ export default function Journal() {
           </form>
         </div>
         <div id="entry"></div>
-        {audio && <AudioPlayer text={chatText} />}
+        {showAudio && <AudioPlayer text={chatText} />}
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import { runChat } from "../langchain/init";
 import { useState, SetStateAction, Dispatch } from "react";
 import AudioPlayer from "../langchain/audioplayer";
 export default function Journal() {
-  const [audio, setShowAudio] = useState(false);
+  const [showAudio, setShowAudio] = useState(false);
   const [chatText, setChatText]: [string, Dispatch<SetStateAction<string>>] =
     useState("");
   const handleJournalDisplay = async (event) => {
@@ -57,7 +57,7 @@ export default function Journal() {
           </form>
         </div>
         <div id="entry"></div>
-        {audio && <AudioPlayer text={chatText} />}
+        {showAudio && <AudioPlayer text={chatText} />}
       </div>
     </>
   );

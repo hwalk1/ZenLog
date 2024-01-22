@@ -24,6 +24,11 @@ export const options = {
       profile(profile) {
         console.log("profile github", profile);
 
+        let userRole = "GitHub User";
+        if (profile?.email == "haydenjwalker1@gmail.com") {
+          userRole = "admin";
+        }
+
         return {
           ...profile,
           id: profile.sub,

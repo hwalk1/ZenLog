@@ -1,9 +1,10 @@
-import Github from "next-auth/providers/github";
-import GitLab from "next-auth/providers/gitlab";
+import GitHubProvider from "next-auth/providers/github";
+import GoggleProvider from "next-auth/providers/google";
 
 export const options = {
   providers: [
-    Github({
+    GitHubProvider({
+      // @ts-ignore
       profile(profile) {
         console.log("profile github", profile);
       },

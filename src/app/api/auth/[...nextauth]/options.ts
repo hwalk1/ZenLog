@@ -19,10 +19,9 @@ export const options = {
         };
       },
       clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
     }),
     GoogleProvider({
-      // @ts-ignore
       profile(profile) {
         console.log("profile google", profile);
 
@@ -37,6 +36,16 @@ export const options = {
           role: userRole,
         };
       },
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  callbacks: {
+    async jwt({token, user}) {
+      if (user) token.role = user.role
+    }
+    async session({session, token}) {
+      if (session?.user) session.user.role = token.role
+    }
+  }
 };

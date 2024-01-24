@@ -18,11 +18,12 @@ export const options = {
           role: userRole,
         };
       },
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
     }),
     GoogleProvider({
-      // @ts-ignore
       profile(profile) {
-        console.log("profile github", profile);
+        console.log("profile google", profile);
 
         let userRole = "Google User";
         if (profile?.email == "haydenjwalker1@gmail.com") {
@@ -35,6 +36,18 @@ export const options = {
           role: userRole,
         };
       },
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) token.role = user.role;
+      return token;
+    },
+    async session({ session, token }) {
+      if (session?.user) session.user.role = token.role;
+      return session;
+    },
+  },
 };

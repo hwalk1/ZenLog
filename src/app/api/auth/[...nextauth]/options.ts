@@ -18,11 +18,13 @@ export const options = {
           role: userRole,
         };
       },
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_ID,
     }),
     GoogleProvider({
       // @ts-ignore
       profile(profile) {
-        console.log("profile github", profile);
+        console.log("profile google", profile);
 
         let userRole = "Google User";
         if (profile?.email == "haydenjwalker1@gmail.com") {

@@ -1,7 +1,10 @@
+import { getServerSession } from "next-auth";
 import Link from "next/link";
 import React from "react";
+import { options } from "../api/auth/[...nextauth]/options";
 
-const Nav = () => {
+const Nav = async () => {
+  const session = await getServerSession(options);
   return (
     <header className="bg-grey-600 text-grey-100">
       <nav className="flex justify-between items-center w-full px-10 py-4">

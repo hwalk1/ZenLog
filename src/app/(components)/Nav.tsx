@@ -15,6 +15,11 @@ const Nav = async () => {
           <Link href="/ClientMember">Client Member</Link>
           <Link href="/Member">Member</Link>
           <Link href="/Public">Public</Link>
+          {session ? (
+            <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
+          ) : (
+            <Link href="/api/auth/signin">Login</Link>
+          )}
         </div>
       </nav>
     </header>

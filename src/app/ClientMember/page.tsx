@@ -4,6 +4,13 @@ import { useSession } from "next-auth/react";
 import { options } from "../api/auth/[...nextauth]/options";
 import { redirect } from "next/navigation";
 
+type User = {
+  name?: string;
+  email?: string;
+  image?: string;
+  role?: string;
+};
+
 const Member = async () => {
   const { data: session } = useSession({
     required: true,
@@ -11,9 +18,10 @@ const Member = async () => {
       redirect("/api/auth/signin?callbackUrl=/ClientMember");
     },
   });
+
   return (
     <div>
-      <h1>Member CLient Session</h1>
+      <h1>Member Client Session</h1>
       <p>{session?.user?.email}</p>
       <p>{session?.user?.role}</p>
     </div>

@@ -1,15 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { options } from "../api/auth/[...nextauth]/options";
 import { redirect } from "next/navigation";
-
-type User = {
-  name?: string;
-  email?: string;
-  image?: string;
-  role?: string;
-};
 
 const Member = () => {
   const { data: session } = useSession({

@@ -6,7 +6,7 @@ export const options = {
     GitHubProvider({
       // @ts-ignore
       profile(profile) {
-        console.log("profile github", profile);
+        //console.log("profile github", profile);
 
         let userRole = "GitHub User";
         if (profile?.email == "haydenjwalker1@gmail.com") {
@@ -23,7 +23,7 @@ export const options = {
     }),
     GoogleProvider({
       profile(profile) {
-        console.log("profile google", profile);
+        //console.log("profile google", profile);
 
         let userRole = "Google User";
         if (profile?.email == "haydenjwalker1@gmail.com") {

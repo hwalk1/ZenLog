@@ -11,7 +11,7 @@ type User = {
   role?: string;
 };
 
-const Member = async () => {
+const Member = () => {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {

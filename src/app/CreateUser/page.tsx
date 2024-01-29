@@ -1,3 +1,4 @@
+"use client";
 const CreateUser = () => {
   return <div>Only Admins!</div>;
 };

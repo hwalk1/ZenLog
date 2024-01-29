@@ -1,24 +1,16 @@
 import { withAuth } from "next-auth/middleware";
-import { NextResponse } from "next/server";
+console.log("Middleware.js Running");
 
 export default withAuth(
+  // `withAuth` augments your `Request` with the user's token.
   function middleware(req) {
-    console.log(req.nextUrl.pathname);
-    console.log(req.nextauth.token.role);
-
-    if (
-      req.nextUrl.pathname.startsWith("/CreateUser") &&
-      req.nextauth.token.role != "admin"
-    ) {
-      return NextResponse.rewrite(new URL("/Denied", req.url));
-    }
+    console.log(req.nextauth.token);
   },
   {
     callbacks: {
-      authorized: ({ token }) => !!token,
+      authorized: ({ token }) => token?.role === "admin",
     },
   }
 );
 
-export { default } from "next-auth/middleware";
-export const config = { matcher: ["/CreateUser"] };
+export const config = { matcher: ["/admin"] };

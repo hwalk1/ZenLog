@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/app/langchain/init.tsx",
-    "middleware.js",
+    "src/app/middleware.ts",
     "src/app/(components)/AuthProvider.js"
   ],
   "exclude": ["node_modules"]

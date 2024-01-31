@@ -1,5 +1,5 @@
 const CreateUser = () => {
-  return <div>CreateUser Fomr</div>;
+  return <div>CreateUser Form</div>;
 };
 
 export default CreateUser;

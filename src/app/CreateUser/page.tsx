@@ -1,5 +1,5 @@
 const CreateUser = () => {
-  return <div>Only Admins!</div>;
+  return <div>CreateUser Fomr</div>;
 };
 
 export default CreateUser;

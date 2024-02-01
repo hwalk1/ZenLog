@@ -5,7 +5,6 @@ import GoogleProvider from "next-auth/providers/google";
 export const options: NextAuthOptions = {
   providers: [
     GitHubProvider({
-      // @ts-ignore
       profile(profile) {
         let userRole = "GitHub User";
         if (profile?.email == "haydenjwalker1@gmail.com") {

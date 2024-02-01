@@ -22,8 +22,6 @@ export const options: NextAuthOptions = {
     }),
     GoogleProvider({
       profile(profile) {
-        //console.log("profile google", profile);
-
         let userRole = "Google User";
         if (profile?.email == "haydenjwalker1@gmail.com") {
           userRole = "normie";

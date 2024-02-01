@@ -7,8 +7,6 @@ export const options: NextAuthOptions = {
     GitHubProvider({
       // @ts-ignore
       profile(profile) {
-        //console.log("profile github", profile);
-
         let userRole = "GitHub User";
         if (profile?.email == "haydenjwalker1@gmail.com") {
           userRole = "admin";

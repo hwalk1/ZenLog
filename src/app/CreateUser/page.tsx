@@ -1,5 +1,11 @@
+import UserForm from "../(components)/Userform";
+
 const CreateUser = () => {
-  return <div>CreateUser Form</div>;
+  return (
+    <div>
+      <UserForm />
+    </div>
+  );
 };
 
 export default CreateUser;

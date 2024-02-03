@@ -23,10 +23,11 @@ export async function POST(req) {
       return NextResponse.json({ message: "Duplicate Email" }, { status: 409 });
     }
 
-    const hashPassword = await bcrypt.hash(userData.password, 10)
+    const hashPassword = await bcrypt.hash(userData.password, 10);
     userData.password = hashPassword;
 
-    await 
+    await User.create(userData);
+    return NextResponse.json({ message: "User Created" }, { status: 201 });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ message: "Error", error }, { status: 500 });

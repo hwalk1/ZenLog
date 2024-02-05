@@ -19,6 +19,7 @@ export async function POST(req) {
       .lean()
       .exec();
 
+    // If duplicates, message FE
     if (duplicate) {
       return NextResponse.json({ message: "Duplicate Email" }, { status: 409 });
     }

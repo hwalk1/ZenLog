@@ -60,7 +60,7 @@ const UserForm: React.FC = () => {
           onChange={handleChange}
           required={true}
           value={formData.name}
-          className="m-2 bg-slate-400 rounded"
+          className="m-2 bg-slate-600 rounded"
         />
         <label>Email</label>
         <input
@@ -70,7 +70,7 @@ const UserForm: React.FC = () => {
           onChange={handleChange}
           required={true}
           value={formData.email}
-          className="m-2 bg-slate-400 rounded"
+          className="m-2 bg-slate-600 rounded"
         />
         <label>Password</label>
         <input
@@ -80,7 +80,7 @@ const UserForm: React.FC = () => {
           onChange={handleChange}
           required={true}
           value={formData.password}
-          className="m-2 bg-slate-400 rounded"
+          className="m-2 bg-slate-600 rounded"
         />
         <input
           type="submit"

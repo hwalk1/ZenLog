@@ -5,6 +5,13 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import User from "../../../models/User";
 import bcrypt from "bcrypt";
 
+interface FoundUser {
+  name?: string;
+  email?: string;
+  password?: string;
+  id?: string;
+}
+
 export const options: NextAuthOptions = {
   providers: [
     GitHubProvider({
@@ -54,7 +61,9 @@ export const options: NextAuthOptions = {
       },
       async authorize(credentials) {
         try {
-          const foundUser = await User.findOne({ email: credentials.email })
+          const foundUser: FoundUser = await User.findOne({
+            email: credentials.email,
+          })
             .lean()
             .exec();
           if (foundUser) {

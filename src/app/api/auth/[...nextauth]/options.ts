@@ -61,7 +61,7 @@ export const options: NextAuthOptions = {
       },
       async authorize(credentials) {
         try {
-          const foundUser: FoundUser = await User.findOne({
+          const foundUser: FoundUser | null = await User.findOne({
             email: credentials.email,
           })
             .lean()

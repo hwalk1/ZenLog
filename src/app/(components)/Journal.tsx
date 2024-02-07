@@ -18,9 +18,16 @@ const journalEntries = [
 
 const Journal = () => {
   return (
-    <>
-      <div>Journal</div>;
-    </>
+    <div>
+      <h1>Journal Entries</h1>
+      {journalEntries.map((entry) => (
+        <div key={entry.id}>
+          <h2>{entry.title}</h2>
+          <p>{entry.text}</p>
+          <p>Meditation: {entry.meditation}</p>
+        </div>
+      ))}
+    </div>
   );
 };
 

@@ -16,7 +16,7 @@ const journalEntries = [
   // Add more entries as needed
 ];
 
-const Journal = (id, title, text, meditation) => {
+const Journal = ({ id, title, text, meditation }) => {
   return (
     <div>
       <h1>Journal Entries</h1>

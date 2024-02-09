@@ -16,15 +16,15 @@ const journalEntries = [
   // Add more entries as needed
 ];
 
-const Journal = () => {
+const Journal = (id, title, text, meditation) => {
   return (
     <div>
       <h1>Journal Entries</h1>
       {journalEntries.map((entry) => (
-        <div key={entry.id}>
-          <h2>{entry.title}</h2>
-          <p>{entry.text}</p>
-          <p>Meditation: {entry.meditation}</p>
+        <div key={id}>
+          <h2>{title}</h2>
+          <p>{text}</p>
+          <p>Meditation: {meditation}</p>
         </div>
       ))}
     </div>

@@ -19,7 +19,6 @@ const journalEntries = [
 const Journal = ({ id, title, text, meditation }) => {
   return (
     <div>
-      <h1>Journal Entries</h1>
       {journalEntries.map((entry) => (
         <div key={id}>
           <h2>{title}</h2>

@@ -20,6 +20,7 @@ const journalEntries = [
 const History = () => {
   return (
     <div>
+      <h1>Journal Entries</h1>
       {journalEntries.map((entry) => (
         <Journal
           key={entry.id}

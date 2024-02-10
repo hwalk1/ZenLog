@@ -21,15 +21,17 @@ const History = () => {
   return (
     <div>
       <h1>Journal Entries</h1>
-      {journalEntries.map((entry) => (
-        <Journal
-          key={entry.id}
-          id={entry.id}
-          title={entry.title}
-          text={entry.text}
-          meditation={entry.meditation}
-        />
-      ))}
+      <div>
+        {journalEntries.map((entry) => (
+          <Journal
+            key={entry.id}
+            id={entry.id}
+            title={entry.title}
+            text={entry.text}
+            meditation={entry.meditation}
+          />
+        ))}
+      </div>
     </div>
   );
 };

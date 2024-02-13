@@ -1,6 +1,5 @@
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import clientPromise from "../api/db/saveEntry";
 
 const chatModel = new ChatOpenAI({
   openAIApiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,

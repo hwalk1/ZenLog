@@ -4,6 +4,11 @@ import { runChat } from "../langchain/init";
 import { useState, SetStateAction, Dispatch } from "react";
 import AudioPlayer from "../langchain/audioplayer";
 import clientPromise from "../api/db/saveEntry";
+
+let client;
+
+const init = async () => {};
+
 export default function Journal() {
   const [showAudio, setShowAudio] = useState(false);
   const [chatText, setChatText] = useState("");

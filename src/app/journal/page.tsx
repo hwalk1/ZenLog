@@ -6,6 +6,8 @@ import AudioPlayer from "../langchain/audioplayer";
 import clientPromise from "../api/db/saveEntry";
 
 let client;
+let db;
+let movies;
 
 const init = async () => {};
 

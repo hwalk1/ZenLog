@@ -15,6 +15,7 @@ const Nav = async () => {
           <Link href="/ClientMember">Client Member</Link>
           <Link href="/Member">Member</Link>
           <Link href="/Public">Public</Link>
+          {session && <Link href="/History">History</Link>}
           {session ? (
             <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
           ) : (

@@ -2,6 +2,7 @@ import connectMongoDB from "@/libs/mongodb";
 import Entry from "@/models/entry";
 import { NextResponse } from "next/server";
 
+// Post request for connecting to the DB
 export const POST = async (req) => {
   const { title, text, meditation } = await req.json();
   await connectMongoDB();

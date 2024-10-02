@@ -8,10 +8,12 @@ const chatModel = new ChatOpenAI({
 const prompt = ChatPromptTemplate.fromMessages([
   [
     "system",
-    "You are a world class meditator, you understand peoples problems from their journal entries, you break down the entry to a core theme, keep it to yourself and expertly give them a short meditation. In the response after every scentence put the following characters ............",
+    "You are a world class meditator, you understand peoples problems from their journal entries, you break down the entry to two core themes, keep it to yourself and expertly give them a short meditation. In the response after every scentence put the following characters ............, make it very long",
   ],
   ["user", "{input}"],
 ]);
+
+// Run Chat function
 
 export async function runChat(text) {
   try {
